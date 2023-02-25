@@ -31,20 +31,7 @@ OneButton btn6 = OneButton(27,true,true);
 OneButton btn7 = OneButton(28,true,true);
 OneButton btn8 = OneButton(29,true,true);
 
-OneButton btns[8] = {
-  btn1,
-  btn2,
-  btn3,
-  btn4,
-  btn5,
-  btn6,
-  btn7,
-  btn8
-};
-
-
-
-
+OneButton btns[8] = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8};
 
 int randomValue;
 int stat=1;
@@ -99,21 +86,11 @@ int ledBlink(int num){
 
    
    while(stat ==1){
-//     for(int i =0; i<=(sizeof(used)/sizeof(used[0]))-1; i++){
-//      if( digitalRead(button[i-1]) ==1){
-//        Serial.println("deteched!");
-//        while(true){
-//          delay(20);
-//        }
-//      }else{}
-//     }
-
        for(int i=0; i<=8; i++){
     btns[i].tick();
   }
         stat = digitalRead(button[num]);
         
-//     Serial.print(digitalRead(button[1]));
      Serial.println("count: ");
      Serial.println(count);
      Serial.println("num");
@@ -121,8 +98,7 @@ int ledBlink(int num){
 //   LEDStripes[count].show();
      used[count] = num;
      Serial.println("looping");
-//   Serial.println(stat);
-//   stat =0;
+
    }
    Serial.println(count);
    return count;
@@ -137,10 +113,6 @@ void check(){
   }
 }
 
-void statebtn(){
-  
-}
-
 void longPressStart() {
   Serial.println("Button long-press started");
 }
@@ -152,6 +124,6 @@ void longPressStop() {
 
 void stopPlay(){
   while(true){
-    
+   Serial.println("GAMEOVER");
   }
 }
